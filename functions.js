@@ -18,24 +18,28 @@ const returnAbcString = function () {
     return "abc123"
 };
 
-const returnSumOfTen = function () {
-    return 5+5
+const returnSumOfTen = function (a, b) {
+    return a + b
 };
 
 const subtraction = function (a, b) {
     return a - b
 };
 
-const multiplication = function () {
-    return 10 * 2
+const multiplication = function (a, b) {
+    return a * b
 };
 
-const division = function () {
-    return 25 / 5
+const division = function (a, b) {
+    if (b !== 0) {
+        return a / b
+    }else{
+        return Infinity // or some other error handling
+    }
 };
 
-const returnArray = function () {
-    return [1,2,3]
+const returnArray = function (arr) {
+    return arr
 };
 
 const returnFirstIndex = function (array) {
@@ -47,19 +51,29 @@ const returnSecondIndex = function (array) {
 };
 
 const returnArrayLength = function (array) {
-    return array[2]
+    return array.length
 };
 
-const arraySum = function () {
-   return 6
+const arraySum = function (arr) {
+  if (!Array.isArray(arr) || arr.length === 0){
+    return 0
+  }
+  return arr.reduce((sum, num)=> sum + num, 0)
 };
 
-const arraySubtraction = function () {
-    return -6
+const arraySubtraction = function (arr) {
+    if ( !Array.isArray(arr) || arr.length === 0){
+        return 0
+    }
+    return arr.reduce((difference, num) => difference - num, 0)
 };
 
-const multiplicationArray = function () {
-    return 3 * 2
+
+const multiplicationArray = function (arr) {
+    if (!Array.isArray(arr)|| arr.length === 0){
+        return 1
+    }
+    return arr.reduce((product, num)=> product * num, 1)
 };
 
 const divisionArray = function (arr) {
